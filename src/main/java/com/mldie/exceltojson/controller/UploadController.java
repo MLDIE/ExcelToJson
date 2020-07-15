@@ -58,7 +58,7 @@ public class UploadController {
 
                     //创建一个文件输出流
 //                  FileOutputStream out = new FileOutputStream(savePath + "\\" + filename);
-                    BufferedWriter out = new BufferedWriter(new FileWriter(realPath + name + ".json"));
+                    BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(realPath + name + ".json")), "utf-8"));
                     out.write(jsonList.toString());
 
                     System.out.println("success");
